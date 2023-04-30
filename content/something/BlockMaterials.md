@@ -1,12 +1,12 @@
-# Armor Materials
+# Block Properties
 
 Block Materials define the map color and some basic properties of blocks.
 
-Named block materials go in the `blocks/materials` directory in the content pack part of the addon.
+Named block materials go in the `blocks/properties` directory in the content pack part of the addon.
 
 E.g.
 ```
-content/examplepack/blocks/materials/stronk.json
+content/examplepack/blocks/properties/stronk.json
 ```
 
 ## Basic structure of the JSON file
