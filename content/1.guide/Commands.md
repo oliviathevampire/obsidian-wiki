@@ -52,7 +52,7 @@ Arguments is an array of all the arguments you want the command to have, can be 
 
 This defines the type of argument that the entry will be.
 
-If you want to see all the possible values you can go to [Command Argument Types](./CommandArgumentTypes.md)
+If you want to see all the possible values you can go to [Command Argument Types](/guide/command-argument-types)
 
 ### "executes"
 

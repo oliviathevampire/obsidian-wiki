@@ -68,6 +68,40 @@ The ``"greedy""`` argument takes the string arguments a step further. Any charac
 
 ::card
 #title
+Example - Messaging Command
+#description
+Say we have a simple message command of the following form:
+<br>
+```/message <target> <message>```
+<br>
+This would be ideal for a greedy string, since it can consume all text after the player's name:
+```json
+{
+    "op_level": 0,
+    "arguments": {
+        "target" : {
+            "type": "player",
+            "arguments": {
+                "message": {
+                    "type": "greedy",
+                    "executes": [
+                        "msg {target} {message}"
+                    ]
+                }
+            }
+        }
+    }
+}
+```
+
+Any text entered after the ``<target>`` argument would be sent to the player. For example, the command could be used as follows:
+```
+/message Skepter This is some incredibly long string with "symbols" and $p3c!aL characters~
+```
+::
+<br>
+::card
+#title
 Examples of ``"string"`` argument uses
 #description
 - A messaging/whisper command (as shown in the example above)
