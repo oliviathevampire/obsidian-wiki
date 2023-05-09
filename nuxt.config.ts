@@ -1,11 +1,20 @@
 import { createResolver } from '@nuxt/kit'
 const { resolve } = createResolver(import.meta.url)
 
-
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
+  modules: ['@nuxtjs/tailwindcss'],
+  css: [
+    "@/assets/app.css"
+  ],
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+  },
   nitro: {
-    preset: 'service-worker'
+    preset: 'service-worker',
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
   },
   target: 'static',
   router: {
