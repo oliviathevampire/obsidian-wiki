@@ -70,53 +70,46 @@ Examples of ``"string"`` argument uses
 ### "greedy"
 The ``"greedy""`` argument takes the string arguments a step further. Any characters and symbols are allowed and quotation marks are not required.
 
-::card-grid
+::card
 #title
-What's included
-
-#default
-    ::card
-    #title
-    Example - Messaging Command
-    #description
-        Say we have a simple message command of the following form:
-        <br>
-        <br>
-        ```/message <target> <message>```
-        <br>
-        <br>
-        This would be ideal for a greedy string, since it can consume all text after the player's name:
-        ```json
-        {
-            "op_level": 0,
+Example - Messaging Command
+#description
+Say we have a simple message command of the following form:
+<br>
+<br>
+```/message <target> <message>```
+<br>
+<br>
+This would be ideal for a greedy string, since it can consume all text after the player's name:
+```json
+{
+    "op_level": 0,
+    "arguments": {
+        "target" : {
+            "type": "player",
             "arguments": {
-                "target" : {
-                    "type": "player",
-                    "arguments": {
-                        "message": {
-                            "type": "greedy",
-                            "executes": [
-                                "msg {target} {message}"
-                            ]
-                        }
-                    }
+                "message": {
+                    "type": "greedy",
+                    "executes": [
+                        "msg {target} {message}"
+                    ]
                 }
             }
         }
-        ```
-        Any text entered after the ``<target>`` argument would be sent to the player. For example, the command could be used as follows:
-        ```
-        /message Skepter This is some incredibly long string with "symbols" and $p3c!aL characters~
-        ```
-    ::
-    ::card
-    #title
-    Examples of ``"string"`` argument uses
-    #description
-    - A messaging/whisper command (as shown in the example above)
-    - A mailing command
-    - Any command involving lots of text, such as a command to write the contents of a book
-    - Any command which involves an unreasonable/unknown amount of arguments
-    - Any command where you want to parse arguments similar to how regular Bukkit would
-    ::
+    }
+}
+```
+Any text entered after the ``<target>`` argument would be sent to the player. For example, the command could be used as follows:
+```
+/message Skepter This is some incredibly long string with "symbols" and $p3c!aL characters~
+```
+::card
+#title
+Examples of ``"string"`` argument uses
+#description
+- A messaging/whisper command (as shown in the example above)
+- A mailing command
+- Any command involving lots of text, such as a command to write the contents of a book
+- Any command which involves an unreasonable/unknown amount of arguments
+- Any command where you want to parse arguments similar to how regular Bukkit would
 ::
